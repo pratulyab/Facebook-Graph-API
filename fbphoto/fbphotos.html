@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>My Facebook Photos</title>
+        <!-- Import minified Font Awesome using CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <!-- Import minified materialize.css using CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    
+    <body style="margin:40px 0;">
+        <!-- Help Card -->
+        <div id="photos-container" class="row flow-text">
+            <div class="col s12 m8 offset-m2">
+                <div class="card blue-grey darken-3">
+                    <div class="card-content center-align">
+                        <span class="red-text text-lighten-3 card-title"><u><b>WHAT &amp; HOW</b></u></span><hr>
+                        <p class="light-blue-text text-lighten-4" style="font-size: 20px;">All the images that you've uploaded on <b>Facebook</b> will be displayed in a <i>carousel.</i>
+                        <br><br>
+                        You are required to enter the access token, generated using Facebook's Graph API tool ,in the input field.
+                        <br>Permissions Required : user_about_me, user_photos</p>
+                        <p style="font-size: 20px;" class="teal-text">Login -> Get Token -> Get User Access Token -> Select Permissions</p>
+                    </div>
+                    <div class="card-action center">
+                        <a class="btn blue-grey darken-3 yellow-text text-darken-2" href="https://developers.facebook.com/tools/explorer/145634995501895/" target="_blank">Facebook Graph API Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Functionality -->
+        <div class="row" style="margin: 40px;">
+            <form class="col s12" id="get-photos-form" action="">
+                <div class="row">
+                    <div class="input-field col s12 m8 offset-m2">
+                        <i class="fa fa-lock fa-2x prefix"></i>
+                        <input id="access-token-input" type="text" class="validate" placeholder="Permissions required: user_about_me, user_photos">
+                        <label for="access-token-input">Access Token</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="waves-effect waves-light light-blue btn col s12 m8 offset-m2" type="submit" id="get-photos-btn">
+                        View Photos&nbsp;<i class="fa fa-photo"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Import minified jquery using CDN -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Import minified materialize.js using CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <script src="fbphotos.js" type="application/ecmascript"></script>
+        <script>
+            $(window).load(function(){
+                var config = {
+                    id: "photos-container", // id of the div to be populated with the images
+                    img_width: 400 // fb's response contains the images' data, each with various resolution options.
+                                    // lesser the width, lesser the data to be loaded for the browser to display
+                };
+                fbPhotos.init(config);
+            })
+        </script>
+    </body>
+</html>
