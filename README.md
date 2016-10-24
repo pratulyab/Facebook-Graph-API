@@ -18,19 +18,27 @@
 - The links from the posts are extracted and displayed separately.
 - Filters: Uploader, Date on and after which the posts are to be retrieved.
 
+
+
+- The access token needs to be entered to get all the groups.
 ![Group Feed]
 (/screenshots/fbgroup1.png)
-### - The access token needs to be entered to get all the groups.
 
+
+
+- All the groups are retrieved and displayed in an accordion.
 ![All the groups rendered and displayed in accordion]
 (/screenshots/fbgroup2.png)
-### - All the groups are retrieved and displayed in an accordion.
 
+
+
+- Date can be chosen. The posts with lesser creation date wouldn't be displayed.
+- Plugin: pickadate (Materialize default)
 ![Date filter using pickadate plugin]
 (/screenshots/fbgroup3.png)
-### - Date can be chosen. The posts with lesser creation date wouldn't be displayed.
-	- Plugin: pickadate
 
+
+
+- The group feed is retrieved and displayed in cards. Hovering over links initializes the tooltip display the link.
 ![Retrieved feed]
 (/screenshots/fbgroup4.png)
-### - The group feed is retrieved and displayed in cards.
