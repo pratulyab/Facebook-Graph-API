@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Facebook Group Links</title>
+        <!-- Import minified Font Awesome using CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <!-- Import minified materialize.css using CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            .collapsible-header{
+                font-weight: 600;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    
+    <body style="margin:40px 0;">
+        <!-- Help Card -->
+        <div id="links-container" class="row flow-text">
+            <div class="col s12 m8 offset-m2">
+                <div class="card blue-grey darken-3">
+                    <div class="card-content center-align">
+                        <span class="red-text text-lighten-3 card-title"><u><b>WHAT &amp; HOW</b></u></span><hr>
+                        <p class="light-blue-text text-lighten-4" style="font-size: 20px;">All the posts of a <b>Facebook</b> group (you are a member of) will be rendered based on filters chosen. Links will be presented separately.
+                        <br><br>
+                        You are required to enter the access token in the input field generated using Facebook's Graph API tool.
+                        <br>Permissions Required : user_about_me, user_managed_groups</p>
+                        <p style="font-size: 20px;" class="teal-text">Login -> Get Token -> Get User Access Token -> Select Permissions</p>
+                    </div>
+                    <div class="card-action center">
+                        <a class="btn blue-grey darken-3 yellow-text text-darken-2" href="https://developers.facebook.com/tools/explorer/145634995501895/" target="_blank">Facebook Graph API Tool</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Functionality -->
+        <div class="row" style="margin: 40px;">
+            <form class="col s12" id="access-token-form" action="">
+                <div class="row">
+                    <div class="input-field col s12 m8 offset-m2">
+                        <i class="fa fa-lock fa-2x prefix"></i>
+                        <input id="access-token-input" type="text" class="validate" placeholder="Permissions required: user_about_me, user_managed_groups">
+                        <label for="access-token-input">Access Token</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="waves-effect waves-light light-blue btn col s12 m8 offset-m2" type="submit" id="get-links-btn">
+                        Get Groups&nbsp;<i class="fa fa-users"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Import minified jquery using CDN -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Import minified materialize.js using CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <script src="fbGroup.js" type="application/ecmascript"></script>
+        <script>
+            $(window).load(function(){
+                fbGroupLinks.init();
+            })
+        </script>
+    </body>
+</html>
